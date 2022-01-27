@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  /* Colors */
+  /* Primary */
+  --Red: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+  /* Accent */
+  --Blue: hsl(248, 32%, 49%);
+  /* Neutral */
+  --DarkBlue: hsl(249, 10%, 26%);
+  --DarkBlueOpacity: hsla(249, 10%, 26%, 0.2);
+  --GrayishBlue: hsl(246, 25%, 77%);
+  --White: rgb(255, 255, 255);
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif; /*Weights: 400, 500, 600, 700 */
+  background: url("./../assets/images/bg-intro-mobile.png"), var(--Red);
+  background-repeat: no-repeat;
+  color: var(--White);
+}
+main {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+}
+section h1 ~ p {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+section p:first-child {
+  background-color: var(--Blue);
+  padding: 1rem 4rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0px 7px 0px 0.5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+strong {
+  font-weight: 700;
+}
+form {
+  border-radius: 0.5rem;
+  background-color: var(--White);
+  padding: 1rem;
+  box-shadow: 0px 7px 0px 0.5px rgba(0, 0, 0, 0.1);
+}
+input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--DarkBlueOpacity);
+  border-radius: 0.2rem;
+}
+input::placeholder {
+  color: var(--DarkBlue);
+  font-weight: 700;
+  opacity: 0.8;
+}
+input[type="submit"] {
+  background-color: var(--Green);
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 1px -2px 0 0.5px inset rgba(0, 0, 0, 0.1);
+}
+form p {
+  color: var(--GrayishBlue);
+  text-align: center;
+  font-size: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+form p a {
+  color: var(--Red);
+  text-decoration: none;
+  font-weight: 600;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* Form validation */
+.input-container {
+  position: relative;
+}
+.icon-error {
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+}
+.error {
+  color: var(--Red);
+  text-align: right;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
+}
+.none {
+  display: none;
+}
