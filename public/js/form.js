@@ -14,4 +14,26 @@ export default function validatorForm() {
     input.insertAdjacentElement("afterend", $div);
     input.insertAdjacentElement("afterend", $span);
   });
+  d.addEventListener("keyup", (e) => {
+    if (e.target.matches("form [required]")) {
+      let $input = e.target;
+      let iconError = e.target.nextElementSibling;
+      let colorInput = e.target.closest("input");
+      let pattern = $input.pattern;
+      if (pattern && $input.value !== "") {
+        let regex = new RegExp(pattern);
+        return !regex.exec($input.value)
+          ? (d.getElementById($input.name).classList.add("is-active"),
+            iconError.classList.add("is-active"),
+            colorInput.classList.add("is-invalid"))
+          : (d.getElementById($input.name).classList.remove("is-active"),
+            iconError.classList.remove("is-active"),
+            colorInput.classList.remove("is-invalid"));
+      }
+    }
+
+    d.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  });
 }

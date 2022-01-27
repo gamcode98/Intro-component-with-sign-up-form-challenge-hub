@@ -16,7 +16,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif; /*Weights: 400, 500, 600, 700 */
   background: url("./../assets/images/bg-intro-mobile.png"), var(--Red);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   color: var(--White);
 }
 main {
@@ -49,6 +49,10 @@ form {
   padding: 1rem;
   box-shadow: 0px 7px 0px 0.5px rgba(0, 0, 0, 0.1);
 }
+
+.is-invalid {
+  border: 1px solid var(--Red);
+}
 input {
   display: block;
   width: 100%;
@@ -70,7 +74,9 @@ input[type="submit"] {
   text-transform: uppercase;
   font-weight: 600;
   box-shadow: 1px -2px 0 0.5px inset rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
+
 form p {
   color: var(--GrayishBlue);
   text-align: center;
@@ -107,6 +113,60 @@ form p a {
   margin-bottom: 1rem;
   font-size: 0.7rem;
 }
+.icon-error.is-active,
+.error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
+}
 .none {
   display: none;
+}
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    width: 50%;
+    display: flex;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    background: url("./../assets/images/bg-intro-desktop.png"), var(--Red);
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    height: 100vh;
+  }
+  form {
+    padding: 1.5rem;
+  }
+  main {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    padding-left: 0;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+  h1,
+  section h1 ~ p {
+    text-align: left;
+    width: 530px;
+  }
 }

@@ -16,7 +16,7 @@
 
 <body>
   <main>
-    <section style="display: none;">
+    <section>
       <h1>
         Learn to code by watching others
       </h1>
@@ -47,7 +47,7 @@
 
         <div class="input-container">
           <input type="password" name="password" placeholder="Password" title="Password cannot be empty"
-            pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/" required>
+            pattern="[A-Za-z0-9!?-]{8,12}" required>
         </div>
 
         <input type="submit" value="Claim your free trial">
